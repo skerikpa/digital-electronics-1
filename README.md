@@ -3,4 +3,7 @@
 
 **tučný** ~~skrt~~ ***tucna kurziva***
 
-### mega nadpis
+# mega nadpis
+## nadpis
+### medium
+#### mini nadpis
