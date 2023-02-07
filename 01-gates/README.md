@@ -36,10 +36,14 @@ end architecture dataflow;
 
    ![your figure](images/distribution_laws.png)
 
+```vhdl
+architecture dataflow of gates is
+begin
     f_first_left <= (a_i and b_i) or (a_i and c_i);   -- first distribution law left side
     f_first_right <= a_i and (b_i or c_i); 	      -- first distribution law right side
     f_second_left  <= (a_i or b_i) and (a_i or c_i);  -- second distribution law left side
     f_second_right  <= a_i or (b_i and c_i);  	      -- second distribution law right side
+```
 
 2. Link to your public EDA Playground example:
 
