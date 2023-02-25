@@ -8,7 +8,10 @@
 architecture Behavioral of mux_3bit_4to1 is
 begin
 
-    -- WRITE YOUR CODE HERE
+    f_o <=  a_i when (sel_i = "000") else
+            b_i when (sel_i = "001") else
+            c_i when (sel_i = "010") else
+            d_i; 
 
 end architecture Behavioral;
 ```
