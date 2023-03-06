@@ -1,22 +1,5 @@
-------------------------------------------------------------
---
---! @title One-digit 7-segment display decoder
---! @author Tomas Fryza
---! Dept. of Radio Electronics, Brno Univ. of Technology, Czechia
---!
---! @copyright (c) 2018 Tomas Fryza
---! This work is licensed under the terms of the MIT license
---!
---! Decoder for one-digit Seven-segment display, Common Anode
---! (active-low). Decoder defines 16 hexadecimal symbols: 0, 1,
---! ..., 9, A, b, C, d, E, F. All segments are turn off when
---! "blank" is high. Decimal Point is not implemented.
---
--- Hardware: Nexys A7-50T, xc7a50ticsg324-1L
--- Software: TerosHDL, Vivado 2020.2
-
 library ieee;
-  use ieee.std_logic_1164.all;
+use ieee.std_logic_1164.all;
 
 ------------------------------------------------------------
 -- Entity declaration for seven7-segment display decoder
