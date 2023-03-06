@@ -1,6 +1,6 @@
  ![Characteristic equations](images/eq_flip_flops.png)
  
- q(n+1) = d
+ q(d_n+1) = d
 
 **D-type FF**
    | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
