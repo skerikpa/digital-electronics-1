@@ -27,7 +27,7 @@ architecture Behavioral of jk_ff_rst is
             else sig_q <= not sig_q; 	    --toggle           
             end if;
         end if;
-    end process p_d_ff_rst;
+    end process p_jk_ff_rst;
 
     -- Output ports are permanently connected to local signal
     q     <= sig_q;
