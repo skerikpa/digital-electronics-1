@@ -1,3 +1,5 @@
+```
+
 {
   signal:
   [
@@ -24,3 +26,7 @@
     text: '                    4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms   4ms',
   },
 }
+
+```
+
+![f](wavedrom.png)
