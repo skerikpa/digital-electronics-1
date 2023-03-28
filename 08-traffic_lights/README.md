@@ -68,7 +68,7 @@
 				  sig_cnt <= c_ZERO;
 				end if;
 				
-				when SOUTH_GO =>
+			  when SOUTH_GO =>
 				-- Count up to c_DELAY_4SEC
 				if (sig_cnt < c_DELAY_4SEC) then
 				  sig_cnt <= sig_cnt + 1;
@@ -79,7 +79,7 @@
 				  sig_cnt <= c_ZERO;
 				end if;
 				
-				when SOUTH_WAIT =>
+			  when SOUTH_WAIT =>
 				-- Count up to c_DELAY_1SEC
 				if (sig_cnt < c_DELAY_1SEC) then
 				  sig_cnt <= sig_cnt + 1;
