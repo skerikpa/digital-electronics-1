@@ -12,7 +12,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity top is
     Port ( CLK100MHZ : in STD_LOGIC;
-           SW : in STD_LOGIC_VECTOR (15 downto 0);
+           SW : in STD_LOGIC_VECTOR (7 downto 0);
            CA : out STD_LOGIC;
            CB : out STD_LOGIC;
            CC : out STD_LOGIC;
@@ -22,14 +22,21 @@ entity top is
            CG : out STD_LOGIC;
            DP : out STD_LOGIC;
            AN : out STD_LOGIC_VECTOR (7 downto 0);
-           BTNC : in STD_LOGIC);
+           BTNC : in STD_LOGIC;
+           BTNR : in STD_LOGIC;
+           r_word : in STD_LOGIC_VECTOR (7 downto 0);
+           JC_i : in STD_LOGIC;
+           JB_o : out STD_LOGIC
+           );
 end top;
 
 ----------------------------------------------------------
 -- Architecture body for top level
 ----------------------------------------------------------
 architecture behavioral of top is
-  -- No internal signals are needed today:)
+
+signal sig_word_i : std_logic_vector(7 downto 0) := "00000000";
+
 begin
 
   --------------------------------------------------------
@@ -39,15 +46,15 @@ begin
       port map (
           clk      => CLK100MHZ,
           rst      => BTNC,
-          data3(3) => SW(15),
-          data3(2) => SW(14),
-          data3(1) => SW(13),
-          data3(0) => SW(12),
+          data3(3) => sig_word_i(7),
+          data3(2) => sig_word_i(6),
+          data3(1) => sig_word_i(5),
+          data3(0) => sig_word_i(4),
           
-          data2(3) => SW(11),
-          data2(2) => SW(10),
-          data2(1) => SW(9),
-          data2(0) => SW(8),
+          data2(3) => sig_word_i(3),
+          data2(2) => sig_word_i(2),
+          data2(1) => sig_word_i(1),
+          data2(0) => sig_word_i(0),
           
           data1(3) => SW(7),
           data1(2) => SW(6),
@@ -76,10 +83,26 @@ begin
           dig(7 downto 0) => AN(7 downto 0)
       );
 
-  --------------------------------------------------------
-  -- Other settings
-  --------------------------------------------------------
-  -- Disconnect the top four digits of the 7-segment display
-  --AN(7 downto 4) <= b"1111";
+  
+driver_Receiver : entity work.Receiver
+    generic map(
+        MSB_INDEX => 7
+    )
+    port map(
+        i_data => JC_i,
+        i_CLK => CLK100MHZ,
+        o_data_word => sig_word_i
+    );
+    
+driver_Transmitter : entity work.Tranceiver
+    generic map(
+        MSB_INDEX => 7
+    )
+    port map (
+        i_data_word => SW,
+        i_clk => CLK100MHZ,
+        i_btn => BTNR,
+        o_data => JB_o        
+    );
 
 end architecture behavioral;

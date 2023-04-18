@@ -10,8 +10,7 @@ entity Receiver is
 	port (
     	i_data 					: in std_logic;
     	o_data_word 			: out std_logic_vector(MSB_INDEX downto 0);
-    	i_CLK 					: in std_logic;
-    	o_data_updated_signal 	: out std_logic
+    	i_CLK 					: in std_logic
     );
 
 end Receiver;
@@ -28,7 +27,7 @@ signal CURRENT_STATE : T_STATE := SHUTDOWN;
 
 signal sync_time : natural := 5;
 signal counter : natural := 0;
-signal sig_data_updated : std_logic := '0';
+signal reg_word : std_logic_vector(MSB_INDEX downto 0);
 
 begin
 
@@ -37,7 +36,6 @@ begin
 	if rising_edge(i_CLK) then
     case CURRENT_STATE is
     when SHUTDOWN =>
-    	sig_data_updated <= '0';
     	if i_data = '1' then        	
         	CURRENT_STATE <= BOOTUP;
         end if;
@@ -52,26 +50,26 @@ begin
             CURRENT_STATE <= SHUTDOWN;
         end if;
     when WAITING =>
-    	sig_data_updated <= '0';
     	if i_data = '0' then        	
         	CURRENT_STATE <= READING;
         end if;
     when READING => 
     	if counter <= MSB_INDEX then
-    		o_data_word(counter) <= i_data;
+    		reg_word(counter) <= i_data;
         	counter <= counter + 1;
         elsif i_data = '1' then	--check for STOP_BIT
-        	sig_data_updated <= '1';	--announce that data_word has been updated
+            o_data_word <= reg_word;
+            counter <= 0;
         	CURRENT_STATE <= WAITING;
         else 
-        	CURRENT_STATE <= SHUTDOWN;
+        	counter <= 0;
+        	CURRENT_STATE <= SHUTDOWN;           
         end if;
     end case;
     end if;
     
 
 end process rx;
-o_data_updated_signal <= sig_data_updated;
 
 
 end behavioral;
