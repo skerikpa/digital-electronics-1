@@ -36,6 +36,7 @@ end top;
 architecture behavioral of top is
 
 signal sig_word_i : std_logic_vector(7 downto 0) := "00000000";
+signal btn_hld_i : std_logic;
 
 begin
 
@@ -101,8 +102,20 @@ driver_Transmitter : entity work.Tranceiver
     port map (
         i_data_word => SW,
         i_clk => CLK100MHZ,
-        i_btn => BTNR,
+        --i_btn => BTNR,
+        i_btn => btn_hld_i,
         o_data => JB_o        
     );
+
+
+btn_hold : process
+begin
+    if rising_edge(BTNR) then
+        btn_hld_i <= '1';  
+        wait for 1000 ns;  
+        btn_hld_i <= '0';    
+    end if;
+    btn_hld_i <= '0';
+end process btn_hold;
 
 end architecture behavioral;
