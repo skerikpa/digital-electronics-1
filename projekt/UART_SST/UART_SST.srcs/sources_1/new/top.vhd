@@ -104,19 +104,20 @@ driver_Transmitter : entity work.Tranceiver
     port map (
         i_data_word => SW,
         i_clk => CLK100MHZ,
-        i_btn => BTNR,
+        i_btn => sig_tx_trigger,
         o_data => JB_o        
     );
 
 driver_btn_en : entity work.ButtonPulse
  generic map(
-        g_max => 1000000000
+        g_max => 50000
     )
     port map (
         i_btn => BTNR, 
         clk => CLK100MHZ,
         o_pulse => sig_tx_trigger
     );
+
 
 
 end architecture behavioral;
