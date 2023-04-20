@@ -43,6 +43,7 @@ begin
         	counter <= counter + 1;
         else
         	current_bit <= '1';
+            counter <= 0;
             CURRENT_STATE <= WAITING;
     	end if;
     end case;
