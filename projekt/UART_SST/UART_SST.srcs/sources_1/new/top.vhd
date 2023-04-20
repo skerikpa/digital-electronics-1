@@ -38,6 +38,8 @@ architecture behavioral of top is
 signal sig_word_i : std_logic_vector(7 downto 0) := "00000000";
 --signal btn_hld_i : std_logic;
 
+signal sig_tx_trigger : std_logic := '0';
+
 begin
 
   --------------------------------------------------------
@@ -106,6 +108,15 @@ driver_Transmitter : entity work.Tranceiver
         o_data => JB_o        
     );
 
+driver_btn_en : entity work.ButtonPulse
+ generic map(
+        g_max => 1000000000
+    )
+    port map (
+        i_btn => BTNR, 
+        clk => CLK100MHZ,
+        o_pulse => sig_tx_trigger
+    );
 
 
 end architecture behavioral;
