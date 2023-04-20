@@ -26,7 +26,7 @@ signal counter : natural := 0;
 signal current_bit : std_logic := '1';
 begin
 
-tx : process(i_CLK, i_btn)
+tx : process(i_CLK)
 begin
 	if rising_edge(i_CLK) then
     case CURRENT_STATE is

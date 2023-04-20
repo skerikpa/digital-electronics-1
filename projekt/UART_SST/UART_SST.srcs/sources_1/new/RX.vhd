@@ -31,7 +31,7 @@ signal reg_word : std_logic_vector(MSB_INDEX downto 0);
 
 begin
 
-rx : process(i_CLK, i_data)
+rx : process(i_CLK)
 begin
 	if rising_edge(i_CLK) then
     case CURRENT_STATE is
