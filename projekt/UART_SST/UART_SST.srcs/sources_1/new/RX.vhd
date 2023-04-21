@@ -5,12 +5,14 @@ use IEEE.std_logic_1164.all;
 
 entity Receiver is
 	generic(
-    	MSB_INDEX : natural := 7
+    	MSB_INDEX : natural := 7;
+    	clock_en_g_max : natural := 1
     );
 	port (
     	i_data 					: in std_logic;
     	o_data_word 			: out std_logic_vector(MSB_INDEX downto 0);
-    	i_CLK 					: in std_logic
+    	i_CLK 					: in std_logic;
+    	i_rst                   : in std_logic 
     );
 
 end Receiver;
@@ -29,11 +31,24 @@ signal sync_time : natural := 5;
 signal counter : natural := 0;
 signal reg_word : std_logic_vector(MSB_INDEX downto 0);
 
+signal CLK_en : std_logic;
+
 begin
 
-rx : process(i_CLK)
+clk_en0 : entity work.clock_enable
+generic map (g_max => clock_en_g_max)  -- Change to 5000 for implement, 5 for TB
+port map (
+    clk => i_CLK,
+    rst => i_rst,
+    ce => CLK_en
+);
+
+rx : process(i_CLK, i_rst)
 begin
-	if rising_edge(i_CLK) then
+    if i_rst = '1' then
+        current_state <= SHUTDOWN;
+        counter <= 0;
+	elsif rising_edge(i_CLK) and CLK_en = '1' then
     case CURRENT_STATE is
     when SHUTDOWN =>
     	if i_data = '1' then        	

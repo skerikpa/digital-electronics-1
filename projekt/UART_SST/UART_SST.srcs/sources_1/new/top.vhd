@@ -40,6 +40,8 @@ signal sig_word_i : std_logic_vector(7 downto 0) := "00000000";
 
 signal sig_tx_trigger : std_logic := '0';
 
+signal clk_g_max : natural := 10;   -- change this to some other value (5000?) :( 
+
 begin
 
   --------------------------------------------------------
@@ -89,9 +91,11 @@ begin
   
 driver_Receiver : entity work.Receiver
     generic map(
-        MSB_INDEX => 7
+        MSB_INDEX => 7,
+        clock_en_g_max => clk_g_max
     )
     port map(
+        i_rst => BTNC,
         i_data => JC_i,
         i_CLK => CLK100MHZ,
         o_data_word => sig_word_i
@@ -99,10 +103,12 @@ driver_Receiver : entity work.Receiver
     
 driver_Transmitter : entity work.Tranceiver
     generic map(
-        MSB_INDEX => 7
+        MSB_INDEX => 7,
+        clock_en_g_max => clk_g_max
     )
     port map (
         i_data_word => SW,
+        i_rst => BTNC,
         i_clk => CLK100MHZ,
         i_btn => sig_tx_trigger,
         o_data => JB_o        
@@ -110,11 +116,13 @@ driver_Transmitter : entity work.Tranceiver
 
 driver_btn_en : entity work.ButtonPulse
  generic map(
-        g_max => 50000
+        g_max => 50,
+        clock_en_g_max => clk_g_max
     )
     port map (
-        i_btn => BTNR, 
-        clk => CLK100MHZ,
+        i_btn => BTNR,
+        i_rst => BTNC, 
+        i_CLK => CLK100MHZ,
         o_pulse => sig_tx_trigger
     );
 

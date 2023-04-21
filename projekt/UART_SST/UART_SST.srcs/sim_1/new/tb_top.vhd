@@ -77,7 +77,7 @@ uut_top : entity work.top
     
    p_clk_gen : process
     begin
-        while now < 300 ns loop -- 30 periods of 100MHz clock
+        while now < 1200 ns loop -- 30 periods of 100MHz clock
             sig_clk_100MHz <= '0';
             wait for c_CLK_100MHZ_PERIOD / 2;
             sig_clk_100MHz <= '1';
