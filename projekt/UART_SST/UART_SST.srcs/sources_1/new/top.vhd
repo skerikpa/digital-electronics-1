@@ -24,7 +24,7 @@ entity top is
            AN : out STD_LOGIC_VECTOR (7 downto 0);
            BTNC : in STD_LOGIC;
            BTNR : in STD_LOGIC;
-           r_word : in STD_LOGIC_VECTOR (7 downto 0);
+           r_word : out STD_LOGIC_VECTOR (7 downto 0);
            JC_i : in STD_LOGIC;
            JB_o : out STD_LOGIC
            );
@@ -118,6 +118,6 @@ driver_btn_en : entity work.ButtonPulse
         o_pulse => sig_tx_trigger
     );
 
-
+r_word <= sig_word_i;
 
 end architecture behavioral;
