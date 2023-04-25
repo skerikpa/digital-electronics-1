@@ -54,7 +54,7 @@ TX (transmitter)
 
 ## Video
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
+[![Watch the video](images/video_thumb.png)](https://youtu.be/hMCPjpuThu8)
 
 <a name="references"></a>
 
