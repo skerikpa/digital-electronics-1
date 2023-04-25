@@ -28,7 +28,7 @@ Code UART ([see References: 2](#references)) for nexys A7 50T and be able to sen
 [see References: 3, 4](#references) <br>
 
 used: <br>
-PMOD ports JC(1) as input, JB(1) as output <br>
+PMOD ports: JC(1) as input, JB(1) as output <br>
 ![](images/pmod.png) <br>
 4 digits of a 7 segment display <br>
 Switches 0-7 <br>
