@@ -19,13 +19,13 @@
 
 ## Project objectives
 
-Code UART ([see References 2](#references)) for nexys A7 50T and be able to send a message from one device and be able to read it on another. 
+Code UART ([see References: 2](#references)) for nexys A7 50T and be able to send a message from one device and be able to read it on another. 
 
 <a name="hardware"></a>
 
 ## Hardware description
 
-[see References 3, 4](#references) <br>
+[see References: 3, 4](#references) <br>
 
 used: <br>
 PMOD ports JC(1) as input, JB(1) as output <br>
@@ -38,7 +38,7 @@ CLK100MHZ <br>
 
 ## VHDL modules description and simulations
 
-driver_7seg_4digits [see References 1.](#references)
+driver_7seg_4digits [see References: 1](#references)
 * clock_enable <br>
 * cnt_up_down <br>
 * hex_7seg <br>
