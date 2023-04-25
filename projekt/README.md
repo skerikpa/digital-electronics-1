@@ -31,13 +31,24 @@ Write your text here.
 
 ## VHDL modules description and simulations
 
-Write your text here.
+driver_7seg_4digits
+clock_enable
+cnt_up_down
+hex_7seg
+
+RX (receiver)
+<br>
+![](images/receiver_tb.PNG)
+
+TX (transmitter)
+<br>
+![](images/Transmitter_tb.PNG)
 
 <a name="top"></a>
 
 ## TOP module description and simulations
 
-Write your text here.
+![](images/top_tb.PNG)
 
 <a name="video"></a>
 
