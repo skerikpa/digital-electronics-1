@@ -70,7 +70,7 @@ uut_top : entity work.top
            --AN => "00000000",
            BTNC => '0',
            BTNR => sig_btnr,
-           r_word => sig_received_WORD,
+           --r_word => sig_received_WORD,
            JC_i => sig_JC_i,
            JB_o => sig_JB_o
     );

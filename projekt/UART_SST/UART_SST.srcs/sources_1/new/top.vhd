@@ -24,7 +24,7 @@ entity top is
            AN : out STD_LOGIC_VECTOR (7 downto 0);
            BTNC : in STD_LOGIC;
            BTNR : in STD_LOGIC;
-           r_word : out STD_LOGIC_VECTOR (7 downto 0);
+           --r_word : out STD_LOGIC_VECTOR (7 downto 0);
            JC_i : in STD_LOGIC;
            JB_o : out STD_LOGIC
            );
@@ -40,7 +40,7 @@ signal sig_word_i : std_logic_vector(7 downto 0) := "00000000";
 
 signal sig_tx_trigger : std_logic := '0';
 
-signal clk_g_max : natural := 10;   -- change this to some other value (5000?) :( 
+signal clk_g_max : natural := 5000;   -- change this to some other value (5000?) :( 
 
 begin
 
@@ -116,7 +116,7 @@ driver_Transmitter : entity work.Tranceiver
 
 driver_btn_en : entity work.ButtonPulse
  generic map(
-        g_max => 50,
+        g_max => 20000,
         clock_en_g_max => clk_g_max
     )
     port map (
@@ -126,6 +126,6 @@ driver_btn_en : entity work.ButtonPulse
         o_pulse => sig_tx_trigger
     );
 
-r_word <= sig_word_i;
+--r_word <= sig_word_i;
 
 end architecture behavioral;
