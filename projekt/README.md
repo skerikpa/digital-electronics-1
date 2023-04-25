@@ -19,7 +19,7 @@
 
 ## Project objectives
 
-Code UART for nexys A7 50T and be able to send a message from one device and be able to read it on another. 
+Code UART ([see References 2](#references)) for nexys A7 50T and be able to send a message from one device and be able to read it on another. 
 
 <a name="hardware"></a>
 
