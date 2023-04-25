@@ -72,7 +72,7 @@ begin
           data0(0) => SW(0),
 
           -- DECIMAL POINT
-          dp_vect => "0111",
+          dp_vect => "1111",
           dp      => DP,
 
           seg(6) => CA,      

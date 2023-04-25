@@ -27,7 +27,7 @@ type T_STATE is
       (SHUTDOWN, BOOTUP, WAITING, READING);
 signal CURRENT_STATE : T_STATE := SHUTDOWN;
 
-signal sync_time : natural := 5;
+signal sync_time : natural := 12;
 signal counter : natural := 0;
 signal reg_word : std_logic_vector(MSB_INDEX downto 0);
 
@@ -82,7 +82,6 @@ begin
         end if;
     end case;
     end if;
-    
 
 end process rx;
 
