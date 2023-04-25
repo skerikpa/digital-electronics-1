@@ -40,7 +40,7 @@ end tb_top;
 
 architecture Behavioral of tb_top is
 
-signal sig_SW_i : std_logic_vector(7 downto 0) := "00000000";
+signal sig_SW_i : std_logic_vector(7 downto 0) := "00010110";
 signal sig_JC_i : std_logic;
 signal sig_JB_o : std_logic;
 signal sig_btnr : std_logic := '0';
@@ -89,7 +89,7 @@ uut_top : entity work.top
    p_data_gen : process
         begin
            sig_SW_i <= "01001011";
-           wait for 78 ns;
+           wait for 200 ns;
            sig_btnr <= '1';
            --wait for 14 ns;
            --sig_btnr <= '0';
