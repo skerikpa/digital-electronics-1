@@ -55,6 +55,7 @@ TX (transmitter)
 
 ## TOP module description and simulations
 
+![](images/UART_scheme_remastered.png)
 ![](images/top_tb.PNG)
 
 <a name="video"></a>
