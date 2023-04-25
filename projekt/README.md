@@ -25,7 +25,8 @@ Code UART for nexys A7 50T and be able to send a message from one device and be 
 
 ## Hardware description
 
-see References 3, 4
+
+*[see References 3, 4](#references)
 
 <a name="modules"></a>
 
