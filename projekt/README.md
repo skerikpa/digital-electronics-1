@@ -54,7 +54,7 @@ TX (transmitter)
 
 ## Video
 
-Write your text here
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
 
 <a name="references"></a>
 
