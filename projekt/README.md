@@ -1,4 +1,4 @@
-# UAMT
+# UART
 
 ### Team members
 
