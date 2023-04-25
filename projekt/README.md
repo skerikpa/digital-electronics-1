@@ -60,4 +60,5 @@ Write your text here
 
 ## References
 
-1. Write your text here.
+1. [driver_7seg_4digits](https://github.com/skerikpa/digital-electronics-1/tree/main/07-display_driver)
+2. [UART wikipedia](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter)
