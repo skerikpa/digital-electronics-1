@@ -38,10 +38,10 @@ CLK100MHZ <br>
 
 ## VHDL modules description and simulations
 
-driver_7seg_4digits [see References 1.](#references) <br><br>
-clock_enable <br>
-cnt_up_down <br>
-hex_7seg <br>
+driver_7seg_4digits [see References 1.](#references) <br>
+* clock_enable <br>
+* cnt_up_down <br>
+* hex_7seg <br>
 <br>
 ButtonPulse - used to eliminate button bounce on BTNL
 
