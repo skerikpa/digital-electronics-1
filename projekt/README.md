@@ -25,7 +25,7 @@ Code UART for nexys A7 50T and be able to send a message from one device and be 
 
 ## Hardware description
 
-Write your text here.
+see References 3, 4
 
 <a name="modules"></a>
 
@@ -62,3 +62,5 @@ TX (transmitter)
 
 1. [driver_7seg_4digits](https://github.com/skerikpa/digital-electronics-1/tree/main/07-display_driver)
 2. [UART wikipedia](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver-transmitter)
+3. [Nexys A7 50T schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf)
+4. [Nexys A7 50T reference manual](https://digilent.com/shop/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/)
