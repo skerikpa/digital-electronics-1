@@ -2,9 +2,9 @@
 
 ### Team members
 
-* Member 1 (responsible for xxx)
-* Member 2 (responsible for xxx)
-* Member 3 (responsible for xxx)
+* Mykyta Syskov (Coding, logic)
+* Patrik Škeřík (Research, coding)
+* Zdeněk Trtík (Research, logic)
 
 ### Table of contents
 
@@ -19,7 +19,7 @@
 
 ## Project objectives
 
-Write your text here.
+Code UART for nexys A7 50T and be able to send a message from one device and be able to read it on another. 
 
 <a name="hardware"></a>
 
