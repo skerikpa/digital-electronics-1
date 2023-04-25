@@ -31,10 +31,10 @@ Write your text here.
 
 ## VHDL modules description and simulations
 
-driver_7seg_4digits
-clock_enable
-cnt_up_down
-hex_7seg
+driver_7seg_4digits <br>
+clock_enable <br>
+cnt_up_down <br>
+hex_7seg <br>
 
 RX (receiver)
 <br>
