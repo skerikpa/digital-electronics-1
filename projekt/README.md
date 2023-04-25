@@ -29,7 +29,7 @@ Code UART for nexys A7 50T and be able to send a message from one device and be 
 
 used: <br>
 PMOD ports JC(1) as input, JB(1) as output <br>
-![](images/pmod.png)
+![](images/pmod.png) <br>
 4 digits of a 7 segment display <br>
 Switches 0-7 <br>
 CLK100MHZ <br>
