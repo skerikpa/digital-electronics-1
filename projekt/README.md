@@ -3,7 +3,7 @@
 ### Team members
 
 * Mykyta Syskov (Coding, logic)
-* Patrik Škeřík (Research, coding)
+* Patrik Škeřík (Research, coding, manager)
 * Zdeněk Trtík (Research, logic)
 
 ### Table of contents
