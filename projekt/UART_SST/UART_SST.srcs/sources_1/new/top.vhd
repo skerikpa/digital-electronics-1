@@ -1,16 +1,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity top is
+    generic (
+        clk_g_max : natural := 5000
+        );
     Port ( CLK100MHZ : in STD_LOGIC;
            SW : in STD_LOGIC_VECTOR (7 downto 0);
            CA : out STD_LOGIC;
@@ -24,7 +18,6 @@ entity top is
            AN : out STD_LOGIC_VECTOR (7 downto 0);
            BTNC : in STD_LOGIC;
            BTNR : in STD_LOGIC;
-           --r_word : out STD_LOGIC_VECTOR (7 downto 0);  --comment before implement
            JC_i : in STD_LOGIC;
            JB_o : out STD_LOGIC
            );
@@ -36,11 +29,8 @@ end top;
 architecture behavioral of top is
 
 signal sig_word_i : std_logic_vector(7 downto 0) := "00000000";
---signal btn_hld_i : std_logic;
 
 signal sig_tx_trigger : std_logic := '0';
-
-signal clk_g_max : natural := 5000;   -- change this to some other value (5000?) :( 
 
 begin
 
@@ -126,6 +116,5 @@ driver_btn_en : entity work.ButtonPulse
         o_pulse => sig_tx_trigger
     );
 
---r_word <= sig_word_i;  --comment before implement
 
 end architecture behavioral;
